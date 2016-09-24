@@ -1,3 +1,4 @@
+{% if include_media %}{{ form.media }}{% endif %}
 {% if form.form_html %}{% spaceless %}
     {% if form_show_errors %}
         {% include "materialize_css_forms/errors.html" %}
