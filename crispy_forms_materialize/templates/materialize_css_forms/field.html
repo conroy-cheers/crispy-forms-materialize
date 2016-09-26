@@ -3,18 +3,7 @@
 {% if field.is_hidden %}
     {{ field }}
 {% else %}
-    <div id="div_{{ field.auto_id }}" class="input-field col s12 m6 l6 {% if field.errors and form_show_errors %} error{% endif %}{% if field|is_checkbox %} checkbox{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %}">{% spaceless %}
-
-        {% if field.label %}
-            {% if field|is_checkbox %}
-                {% crispy_field field %}
-            {% endif %}
-
-            <label for="{{ field.id_for_label }}" {% if field.field.required %}class="required"{% endif %}>
-                {{ field.label|safe }}{% if field.field.required %}<span class="asterisk"> *</span>{% endif %}
-            </label>
-        {% endif %}
-
+    <!--<div id="div_{{ field.auto_id }}" class="input-field{% if field.errors and form_show_errors %} error{% endif %}{% if field|is_checkbox %} checkbox{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %}">{% spaceless %}-->
         {% if field|is_checkboxselectmultiple %}
             {% include 'materialize_css_forms/layout/checkboxselectmultiple.html' %}
         {% endif %}
@@ -35,5 +24,6 @@
             <div id="hint_{{ field.auto_id }}" class="hint grey-text lighten-1">{{ field.help_text|safe }}</div>
         {% endif %}
 
-    {% endspaceless %}</div>
+    {% endspaceless %}
+    <!--</div>-->
 {% endif %}

@@ -120,6 +120,7 @@ class FileField(Field):
     """
     Field that exposes a file upload button in the materialize way
     """
+
     def __init__(self, field, *args, **kwargs):
         self.field = field
         if 'css_class' not in kwargs:
@@ -128,6 +129,7 @@ class FileField(Field):
         super(FileField, self).__init__(field, *args, **kwargs)
 
     template = "{0}/field.file.html".format(TEMPLATE_PACK)
+
 
 class MultiField(crispy_forms_layout.MultiField):
     """
@@ -161,8 +163,8 @@ class InlineField(Field):
     def __init__(self, field, label_column='large-3', input_column='large-9',
                  label_class='', *args, **kwargs):
         self.field = field
-        self.label_column = label_column+' columns'
-        self.input_column = input_column+' columns'
+        self.label_column = label_column + ' columns'
+        self.input_column = input_column + ' columns'
         self.label_class = label_class
 
         super(InlineField, self).__init__(field, *args, **kwargs)

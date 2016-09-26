@@ -10,7 +10,6 @@
 
 {% for field in form %}
         {% cycle '<div class="row">' '' %}
-            <h1>here is a field</h1>
             {% include "materialize_css_forms/field.html" %}
         {% cycle '' '</div>' %}
 {% endfor %}
