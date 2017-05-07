@@ -6,9 +6,7 @@
     <!--<div id="div_{{ field.auto_id }}" class="input-field{% if field.errors and form_show_errors %} error{% endif %}{% if field|is_checkbox %} checkbox{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %}">{% spaceless %}-->
         {% if field|is_checkboxselectmultiple %}
             {% include 'materialize_css_forms/layout/checkboxselectmultiple.html' %}
-        {% endif %}
-
-        {% if not field|is_checkbox and not field|is_checkboxselectmultiple %}
+        {% else %}
             {% crispy_field field %}
         {% endif %}
 
